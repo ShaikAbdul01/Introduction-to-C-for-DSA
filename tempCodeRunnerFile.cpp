@@ -1,1 +1,4 @@
-long long int
+ void hello()
+    {
+        cout << "Hello inside function" << endl;
+    }
