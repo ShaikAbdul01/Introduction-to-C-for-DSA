@@ -2,15 +2,25 @@
 using namespace std;
 int main()
 {
-    string s;
-    getline(cin, s);
-    stringstream ss(s);
-    string word;
-    int cnt = 0;
-    while (ss >> word)
+  string s;
+  getline(cin, s);
+  int cnt = 0;
+  bool inside_word = false;
+  for (char c : s)
+  {
+    if ((c >= 'a' && c <= 'z') || c >= 'A' && c <= 'Z')
     {
-            cnt++;
+      if (inside_word == false)
+      {
+        cnt++;
+      }
+      inside_word = true;
     }
-    cout << cnt << endl;
-    return 0;
+    else
+    {
+      inside_word = false;
+    }
+  }
+  cout << cnt << endl;
+  return 0;
 }
